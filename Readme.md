@@ -10,7 +10,7 @@ You can change the default port in the config.js file.
 Mongo db host name, port and database name are also part of config.js file
 
 
-# Start the mongo deamon
+# Start the mongo daemon
 ```
 mongod --dbpath /path/to/repo/db --directoryperdb --port 27018
 ```
