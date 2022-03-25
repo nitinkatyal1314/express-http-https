@@ -10,7 +10,7 @@ const CONFIG = {
     },
     mongo: {
         host: 'localhost',
-        port: 27018,
+        port: 27017,
         dbname: 'Hackathon'
     },
 }

@@ -7,6 +7,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const DatabaseConnector = require("./db-connect");
 
+const cors = require('cors');
+
 // set up database connection and create database
 const dbConnector = new DatabaseConnector();
 dbConnector.connect()
@@ -28,7 +30,7 @@ dbConnector.addDataToCollection("Person", {
 
 
 const app = express();
-
+app.use(cors());
 // static path dir
 app.use("/static",express.static(path.join(__dirname, CONFIG.server.static_dir)));
 
