@@ -2,7 +2,7 @@ import Buyer from '../modals/buyerModal.js';
 import generateToken from '../utils/generateToken.js';
 
 const registerBuyer = async (req, res) => {
-  const { name, password, email } = req.body;
+  const { name, password, email, mobile, language, address } = req.body;
   const buyer = await Buyer.create({
     name,
     email,

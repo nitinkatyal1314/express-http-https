@@ -18,6 +18,10 @@ const loginFarmer = async (req, res) => {
       _id: farmer._id,
       name: farmer.name,
       email: farmer.email,
+      address: farmer.address,
+      location: farmer.location,
+      language: farmer.language,
+      mobile: farmer.mobile,
       token: generateToken(farmer._id),
     });
   } else {

@@ -15,7 +15,7 @@ const buyerSchema = mongoose.Schema(
       required: true,
     },
     mobile: {
-      type: Number,
+      type: String,
       required: true,
     },
     language: {
@@ -24,14 +24,10 @@ const buyerSchema = mongoose.Schema(
     },
     address: {
       pincode: {
-        type: Number,
-        required: true,
-      },
-      country: {
         type: String,
         required: true,
       },
-      state: {
+      country: {
         type: String,
         required: true,
       },

@@ -37,7 +37,7 @@ const addPostByFarmer = async (req, res) => {
 };
 
 const getAllPostsByFarmers = async (req, res) => {
-  const allPosts = await Post.find({}).populate('farmer');
+  const allPosts = await Post.find({}).populate('farmer').select('-password');
   res.status(200).json(allPosts);
 };
 

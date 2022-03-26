@@ -6,10 +6,10 @@ const farmers = [
     language: 'Hindi',
     mobile: '9875321460',
     address: {
-      state: 'Haryana',
+      // state: 'Haryana',
       country: 'India',
       fullAddress: 'Anchra Kalan',
-      pincode: 126112,
+      pincode: '126112',
     },
     location: {
       coordinates: {
@@ -25,10 +25,10 @@ const farmers = [
     language: 'Hindi',
     mobile: '9875321460',
     address: {
-      state: 'Haryana',
+      // state: 'Haryana',
       country: 'India',
       fullAddress: 'G T Road Panipat',
-      pincode: 132103,
+      pincode: '132103',
     },
     location: {
       coordinates: {
@@ -44,10 +44,10 @@ const farmers = [
     language: 'Hindi',
     mobile: '9875321460',
     address: {
-      state: 'Haryana',
+      // state: 'Haryana',
       country: 'India',
       fullAddress: 'G-123 Karnal',
-      pincode: 132001,
+      pincode: '132001',
     },
     location: {
       coordinates: {
@@ -63,10 +63,10 @@ const farmers = [
     language: 'Hindi',
     mobile: '9875321460',
     address: {
-      state: 'Haryana',
+      // state: 'Haryana',
       country: 'India',
       fullAddress: 'A-12/22 Muzarffarnagar main market',
-      pincode: 251001,
+      pincode: '251001',
     },
     location: {
       coordinates: {
@@ -82,10 +82,10 @@ const farmers = [
     language: 'Hindi',
     mobile: '9875321460',
     address: {
-      state: 'Haryana',
+      // state: 'Haryana',
       country: 'India',
       fullAddress: 'Meerut Highway',
-      pincode: 250001,
+      pincode: '250001',
     },
     location: {
       coordinates: {
