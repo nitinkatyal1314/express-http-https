@@ -12,6 +12,20 @@ We are using mongo cluster on cloud. This will be always available for use for e
 # Configuration
 The configuration is available in the .env file. By default, server runs on port 4000.
 
+# DB initialization
+Mongo db can be initialisez using scripts available. 
+
+Note : This scripts might have already been used to populate the db so don' run it again and again to create duplicate data:
+
+```
+// Initialize farmers data
+npm run populate-farmers
+
+// Initialize buyers data
+npm run populate-buyers
+
+```
+
 # Starting App
 ```
 npm run server
