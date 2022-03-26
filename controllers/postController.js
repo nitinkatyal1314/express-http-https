@@ -15,4 +15,9 @@ const addPostByFarmer = async (req, res) => {
   res.status(201).json(createdPost);
 };
 
-export { addPostByFarmer };
+const getAllPostsByFarmers = async (req, res) => {
+  const allPosts = await Post.find({}).populate('farmer');
+  res.status(200).json(allPosts);
+};
+
+export { addPostByFarmer, getAllPostsByFarmers };
