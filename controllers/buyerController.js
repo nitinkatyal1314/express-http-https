@@ -15,11 +15,30 @@ const registerBuyer = async (req, res) => {
   });
 };
 
-const loginBuyer = async (req, res) => {
-  const { email, password} = req.body;
-  Buyer.findOne({email}, (err, buyer) => {
-    res.status(201).json(buyer);
-  })
-}
+const getAllBuyers = async (req, res) => {
+  Buyer.find({}, (err, buyers) => {
+    if (!err) {
+      res.end(JSON.stringify(buyers));
+    }
+  });
+};
 
-export { registerBuyer, loginBuyer };
+const loginBuyer = async (req, res) => {
+  const { email, password } = req.body;
+  const buyer = await Buyer.findOne({
+    email: email,
+  });
+  if (buyer && buyer.password === password) {
+    res.status(200).json({
+      _id: buyer._id,
+      name: buyer.name,
+      email: buyer.email,
+      token: generateToken(buyer._id),
+    });
+  } else {
+    res.status(401);
+    throw new Error('Invalid Email or Password');
+  }
+};
+
+export { registerBuyer, loginBuyer, getAllBuyers };

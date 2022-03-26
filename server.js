@@ -17,6 +17,7 @@ import cors from 'cors';
 import farmerRoutes from './routes/farmerRoutes.js';
 import buyerRoutes from './routes/buyerRoutes.js';
 import postRoutes from './routes/postRoutes.js';
+import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 
 dotenv.config();
 connectDB();
@@ -95,7 +96,8 @@ app.use('/api/post', postRoutes);
 // });
 
 const PORT = process.env.PORT || 4000;
-
+app.use(notFound);
+app.use(errorHandler);
 app.listen(
   PORT,
   console.log(
