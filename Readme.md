@@ -42,7 +42,7 @@ GET http://localhost:PORT/api/farmer
 
 POST (Login Farmer)
 POST http://localhost:PORT/api/farmer/register { email: 'emailID', 'password': 'password'}
-```
+
 POST (Create Farmer)
 POST http://localhost:PORT/api/farmer/register { name: 'Your Name' email: 'emailID', 'password': 'password'}
 ```
@@ -51,7 +51,12 @@ All the buyer router are (tested via postman)
 ```
 POST (Login Buyer)
 POST http://localhost:PORT/api/buyer { email: 'emailID', 'password': 'password'}
-```
+
 POST (Create Buyer)
 POST http://localhost:PORT/api/buyer { name: 'Your Name' email: 'emailID', 'password': 'password'}
+```
+3. Products routers
+```
+GET (Retreives all products)
+GET http://localhost:PORT/api/products
 ```
