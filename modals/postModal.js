@@ -7,44 +7,74 @@ const postSchema = mongoose.Schema(
       required: true,
       ref: 'Farmer',
     },
-    name: {
+    description: {
       type: String,
       required: true,
     },
-    productID: {
-      type: mongoose.Schema.Types.ObjectId,
+    product: {
+      type: String,
       required: true,
-      ref: 'Farmer',
     },
     category: {
       type: String,
       required: true,
     },
-    description: {
+    variety: {
       type: String,
       required: true,
     },
-    // reviews: [reviewSchema],
-    // rating: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
-    // numReviews: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
-    price: {
-      type: Number,
+    weight: {
+      type: String,
       required: true,
-      default: 0,
     },
-    // countInStock: {
-    //   type: Number,
-    //   required: true,
-    //   default: 0,
-    // },
+    weightUnit: {
+      type: String,
+      required: true,
+    },
+    pricePerWeight: {
+      type: String,
+      required: true,
+    },
+    cropYear: {
+      type: String,
+      required: true,
+    },
+    mobileNumber: {
+      type: String,
+      required: true,
+    },
+    altmobileNumber: {
+      type: String,
+      required: false,
+    },
+    status: {
+      type: String,
+      enum: [
+        "published",
+        "unpublished",
+        "deleted",
+        "sold"
+      ],
+      default: "published"
+    },
+    address: {
+      pincode: {
+        type: Number,
+        required: true,
+      },
+      country: {
+        type: String,
+        required: true
+      },
+      state: {
+        type: String,
+        required: true
+      },
+      fullAdress: {
+        type: String,
+        required: true
+      }
+    },
   },
   {
     timestamps: true,

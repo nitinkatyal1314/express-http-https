@@ -11,6 +11,7 @@
     "populate-farmers": "node modals/scripts/addFarmers.js",
     "populate-buyers": "node modals/scripts/addBuyers.js",
     "populate-products": "node modals/scripts/addProducts.js",
+    "populate-posts": "node modals/scripts/addPost.js",
     "populate-db": "npm run populate-farmer &&  npm run populate-buyers"
   },
   "author": "Nitin Katyal",
