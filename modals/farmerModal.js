@@ -14,20 +14,20 @@ const farmerSchema = mongoose.Schema(
       },
       country: {
         type: String,
-        required: true
+        required: true,
       },
       state: {
         type: String,
-        required: true
+        required: true,
       },
-      fullAdress: {
+      fullAddress: {
         type: String,
-        required: true
-      }
+        required: true,
+      },
     },
     location: {
       type: locationSchema,
-      required: false
+      required: false,
     },
     email: {
       type: String,
@@ -35,6 +35,14 @@ const farmerSchema = mongoose.Schema(
       unique: true,
     },
     password: {
+      type: String,
+      required: true,
+    },
+    mobile: {
+      type: Number,
+      required: true,
+    },
+    language: {
       type: String,
       required: true,
     },

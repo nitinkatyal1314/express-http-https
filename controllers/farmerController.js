@@ -27,17 +27,26 @@ const loginFarmer = async (req, res) => {
 };
 
 const registerFarmer = async (req, res) => {
-  const { name, password, email } = req.body;
+  const { name, password, email, address, location, language, mobile } =
+    req.body;
   const farmer = await Farmer.create({
     name,
     email,
     password,
+    address,
+    location,
+    language,
+    mobile,
   });
 
   res.status(201).json({
     _id: farmer._id,
     name: farmer.name,
     email: farmer.email,
+    address: farmer.address,
+    location: farmer.location,
+    language: farmer.language,
+    mobile: farmer.mobile,
   });
 };
 

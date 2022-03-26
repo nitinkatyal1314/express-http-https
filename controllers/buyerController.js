@@ -6,12 +6,18 @@ const registerBuyer = async (req, res) => {
     name,
     email,
     password,
+    mobile,
+    language,
+    address,
   });
 
   res.status(201).json({
     _id: buyer._id,
     name: buyer.name,
     email: buyer.email,
+    mobile: buyer.mobile,
+    language: buyer.language,
+    address: buyer.address,
   });
 };
 
