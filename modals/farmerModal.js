@@ -1,9 +1,33 @@
 import mongoose from 'mongoose';
+import locationSchema from './locationModal.js';
+
 const farmerSchema = mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
+    },
+    address: {
+      pincode: {
+        type: Number,
+        required: true,
+      },
+      country: {
+        type: String,
+        required: true
+      },
+      state: {
+        type: String,
+        required: true
+      },
+      fullAdress: {
+        type: String,
+        required: true
+      }
+    },
+    location: {
+      type: locationSchema,
+      required: false
     },
     email: {
       type: String,
@@ -14,11 +38,6 @@ const farmerSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    // isAdmin: {
-    //   type: Boolean,
-    //   required: true,
-    //   default: false,
-    // },
   },
   {
     timestamps: true,
