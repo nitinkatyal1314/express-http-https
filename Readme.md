@@ -1,3 +1,6 @@
+# Pre-Requisite
+Node Version >=14 
+
 # Installation
 ```
 npm install
@@ -10,18 +13,14 @@ You can change the default port in the config.js file.
 Mongo db host name, port and database name are also part of config.js file
 
 
-# Start the mongo daemon
-```
-mongod --dbpath /path/to/repo/db --directoryperdb --port 27018
-```
+# Mongo Connection
+We are using mongo cluster on cloud. This will be always available for use for everyone so you dont need to install mongo db locally. The cluster url is mentioned in the .env file.
+
+# Configuration
+The configuration is available in the .env file. By default, server runs on port 5000.
+
 
 # Starting App
 ```
-npm start
+npm run server
 ```
-
-# How to interact with MongoDB
-
-1. Everytime you start the app a new record is added to mongo db Person collection
-
-2. To retreive all the documents of the collection, goto http://localhost:1111/collection?name=Person
