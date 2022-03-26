@@ -15,4 +15,11 @@ const registerBuyer = async (req, res) => {
   });
 };
 
-export { registerBuyer };
+const loginBuyer = async (req, res) => {
+  const { email, password} = req.body;
+  Buyer.findOne({email}, (err, buyer) => {
+    res.status(201).json(buyer);
+  })
+}
+
+export { registerBuyer, loginBuyer };

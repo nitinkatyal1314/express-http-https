@@ -40,13 +40,17 @@ All the farmer router are (tested via postman)
 GET (Retreives all farmers)
 GET http://localhost:PORT/api/farmer
 
-POST (Create Farmer)
-POST http://localhost:PORT/api/farmer { name: 'Your Name' email: 'emailID', 'password': 'password'}
+POST (Login Farmer)
+POST http://localhost:PORT/api/farmer/register { email: 'emailID', 'password': 'password'}
 ```
-
+POST (Create Farmer)
+POST http://localhost:PORT/api/farmer/register { name: 'Your Name' email: 'emailID', 'password': 'password'}
+```
 2. Buyer routers
-
 All the buyer router are (tested via postman)
+```
+POST (Login Buyer)
+POST http://localhost:PORT/api/buyer { email: 'emailID', 'password': 'password'}
 ```
 POST (Create Buyer)
 POST http://localhost:PORT/api/buyer { name: 'Your Name' email: 'emailID', 'password': 'password'}

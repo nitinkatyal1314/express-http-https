@@ -9,6 +9,13 @@ const getAllFarmers  = async(req, res) => {
   });
 }
 
+const loginFarmer = async (req,res) => {
+  const { email, password} = req.body;
+  Farmer.findOne({email}, (err, farmer) => {
+    res.status(201).json(farmer);
+  })
+}
+
 const registerFarmer = async (req, res) => {
   const { name, password, email } = req.body;
   const farmer = await Farmer.create({
@@ -24,4 +31,4 @@ const registerFarmer = async (req, res) => {
   });
 };
 
-export { registerFarmer, getAllFarmers };
+export { registerFarmer, getAllFarmers, loginFarmer };
