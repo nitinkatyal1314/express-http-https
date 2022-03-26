@@ -10,9 +10,30 @@ npm install
 We are using mongo cluster on cloud. This will be always available for use for everyone so you dont need to install mongo db locally. The cluster url is mentioned in the .env file.
 
 # Configuration
-The configuration is available in the .env file. By default, server runs on port 5000.
+The configuration is available in the .env file. By default, server runs on port 4000.
 
 # Starting App
 ```
 npm run server
+```
+
+# Routes
+
+1. Farmer routers
+
+All the farmer router are (tested via postman)
+```
+GET (Retreives all farmers)
+GET http://localhost:PORT/api/farmer
+
+POST (Create Farmer)
+POST http://localhost:PORT/api/farmer { name: 'Your Name' email: 'emailID', 'password': 'password'}
+```
+
+2. Buyer routers
+
+All the buyer router are (tested via postman)
+```
+POST (Create Buyer)
+POST http://localhost:PORT/api/buyer { name: 'Your Name' email: 'emailID', 'password': 'password'}
 ```
