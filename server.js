@@ -15,6 +15,7 @@ import colors from 'colors';
 import morgan from 'morgan';
 import cors from 'cors';
 import farmerRoutes from './routes/farmerRoutes.js';
+import buyerRoutes from './routes/buyerRoutes.js'
 
 dotenv.config();
 connectDB();
@@ -55,7 +56,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/farmer', farmerRoutes);
-// app.use('/api/buyer', buyerRoutes);
+app.use('/api/buyer', buyerRoutes);
 
 // const privateKey = fs.readFileSync('certificates/key.pem', 'utf-8');
 // const certificate = fs.readFileSync('certificates/cert.pem', 'utf-8');
