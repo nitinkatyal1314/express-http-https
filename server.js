@@ -76,7 +76,7 @@ app.use('/api/products', productRoutes);
 // creating the http server
 // http.createServer(app).listen(CONFIG.server.http.port);
 // console.log('Started http server on ', CONFIG.server.http.port);
-
+//Temp comment
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname, 'index.html'));
 // });
