@@ -11,6 +11,11 @@ const postSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    productID: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'Farmer',
+    },
     category: {
       type: String,
       required: true,
