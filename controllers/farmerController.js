@@ -10,10 +10,11 @@ const getAllFarmers = async (req, res) => {
 
 const loginFarmer = async (req, res) => {
   const { email, password } = req.body;
-  const farmer = await Farmer.find({
+  const farmer = await Farmer.findOne({
     email: email,
   });
   console.log(farmer);
+  console.log(password);
   if (farmer && farmer.password === password) {
     res.status(200).json({
       _id: farmer._id,
