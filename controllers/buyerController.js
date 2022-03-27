@@ -45,6 +45,9 @@ const loginBuyer = async (req, res) => {
       _id: buyer._id,
       name: buyer.name,
       email: buyer.email,
+      address: buyer.address,
+      language: buyer.language,
+      mobile: buyer.mobile,
       token: generateToken(buyer._id),
     });
   } else {
