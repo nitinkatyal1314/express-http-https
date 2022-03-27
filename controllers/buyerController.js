@@ -3,23 +3,28 @@ import generateToken from '../utils/generateToken.js';
 
 const registerBuyer = async (req, res) => {
   const { name, password, email, mobile, language, address } = req.body;
-  const buyer = await Buyer.create({
-    name,
-    email,
-    password,
-    mobile,
-    language,
-    address,
-  });
-
-  res.status(201).json({
-    _id: buyer._id,
-    name: buyer.name,
-    email: buyer.email,
-    mobile: buyer.mobile,
-    language: buyer.language,
-    address: buyer.address,
-  });
+  try {
+    const buyer = await Buyer.create({
+      name,
+      email,
+      password,
+      mobile,
+      language,
+      address,
+    });
+    res.status(201).json({
+      _id: buyer._id,
+      name: buyer.name,
+      email: buyer.email,
+      mobile: buyer.mobile,
+      language: buyer.language,
+      address: buyer.address,
+    });
+  } catch (err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
 };
 
 const getAllBuyers = async (req, res) => {
@@ -43,8 +48,9 @@ const loginBuyer = async (req, res) => {
       token: generateToken(buyer._id),
     });
   } else {
-    res.status(401);
-    throw new Error('Invalid Email or Password');
+    res.status(401).json({
+      error: 'Invalid Email or Password',
+    });
   }
 };
 

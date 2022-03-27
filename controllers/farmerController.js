@@ -10,9 +10,10 @@ const getAllFarmers = async (req, res) => {
 
 const loginFarmer = async (req, res) => {
   const { email, password } = req.body;
-  const farmer = await Farmer.findOne({
+  const farmer = await Farmer.find({
     email: email,
   });
+  console.log(farmer);
   if (farmer && farmer.password === password) {
     res.status(200).json({
       _id: farmer._id,
@@ -25,33 +26,40 @@ const loginFarmer = async (req, res) => {
       token: generateToken(farmer._id),
     });
   } else {
-    res.status(401);
-    throw new Error('Invalid Email or Password');
+    res.status(401).json({
+      error: 'Invalid Email or Password',
+    });
   }
 };
 
 const registerFarmer = async (req, res) => {
   const { name, password, email, address, location, language, mobile } =
     req.body;
-  const farmer = await Farmer.create({
-    name,
-    email,
-    password,
-    address,
-    location,
-    language,
-    mobile,
-  });
+  try {
+    const farmer = await Farmer.create({
+      name,
+      email,
+      password,
+      address,
+      location,
+      language,
+      mobile,
+    });
 
-  res.status(201).json({
-    _id: farmer._id,
-    name: farmer.name,
-    email: farmer.email,
-    address: farmer.address,
-    location: farmer.location,
-    language: farmer.language,
-    mobile: farmer.mobile,
-  });
+    res.status(201).json({
+      _id: farmer._id,
+      name: farmer.name,
+      email: farmer.email,
+      address: farmer.address,
+      location: farmer.location,
+      language: farmer.language,
+      mobile: farmer.mobile,
+    });
+  } catch (err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
 };
 
 export { registerFarmer, getAllFarmers, loginFarmer };

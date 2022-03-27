@@ -16,12 +16,16 @@ const protect = async (req, res, next) => {
       console.log(req.user);
       next();
     } catch (err) {
-      res.status(401);
-      throw new Error('Not Authorized, Token Failed');
+      res.status(401).json({
+        error: 'Not Authorized, Token Failed',
+      });
+      // throw new Error('Not Authorized, Token Failed');
     }
   } else {
-    res.status(401);
-    throw new Error('Not Authorized, No Token');
+    res.status(401).json({
+      error: 'Not Authorized, No Token',
+    });
+    // throw new Error('Not Authorized, No Token');
   }
 };
 export { protect };

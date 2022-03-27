@@ -80,7 +80,7 @@ app.use('/api/products', productRoutes);
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname, 'index.html'));
 // });
-
+// Test commit
 // app.get('/collection', (req, res) => {
 //   let collection_name = req.query.name;
 //   if (collection_name === undefined) {
